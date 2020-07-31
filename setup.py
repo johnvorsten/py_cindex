@@ -14,19 +14,19 @@ import setuptools
 with open('README.md', 'r') as f:
     long_description = f.read()
 
-short_description = """RPy2 interface to R Package NbClust"""
+short_description = """Clustering C Index"""
 
-setuptools.setup(name="nbclust-rpy",
+setuptools.setup(name="py_cindex",
                  version="0.0.1",
                  author="John Vorsten",
                  author_email="vorstenjohn@gmail.com",
                  description=short_description,
                  long_description=long_description,
                  long_description_content_type="text/markdown",
-                 url="https://https://github.com/johnvorsten/nbclust_rpy",
+                 url="https://github.com/johnvorsten/py_cindex",
                  packages=setuptools.find_packages(),
                  license='MIT',
-                 keywords='nbclust rpy R clustering',
+                 keywords='clustering R CIndex',
                  classifiers=[
                      'Development Status :: 3 - Alpha',
                      "Programming Language :: Python :: 3",
@@ -38,4 +38,6 @@ setuptools.setup(name="nbclust-rpy",
                      'rpy2',
                      'pandas',
                      'numpy',
+                     'scipy',
+                     'scikit-learn',
                  ])

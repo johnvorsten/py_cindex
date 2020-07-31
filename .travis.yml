@@ -32,6 +32,8 @@ install:
   - conda activate test-environment
   - conda install -c conda-forge numpy
   - conda install -c conda-forge pandas
+  - conda install scikit-learn
+  - conda install scipy
   - conda install rpy2
   - conda install r-essentials r-base
   - conda install pytest # Use this for testing

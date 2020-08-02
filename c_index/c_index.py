@@ -139,6 +139,7 @@ def calc_cindex_nbclust_implementation(distances_array, cluster_labels):
     '''
 
     distances_array = np.array(distances_array)
+    validate_distance_input(distances_array)
     # Sum of within-cluster distances
     Sw = 0
     # Total number of pairs of observations belonging to the same cluster
@@ -215,6 +216,7 @@ def calc_cindex_clusterSim_implementation(distances_array, cluster_labels):
     '''
 
     distances_array = np.array(distances_array)
+    validate_distance_input(distances_array)
     # Sum of within-cluster distances
     Sw = 0
     # Total number of pairs of observations belonging to the same cluster
@@ -381,8 +383,34 @@ def simple_cluster_points(X, n_clusters, clusterer='kmeans'):
     return labels
 
 
-def validate_distance_input(x):
-    pass
+def validate_distance_input(X):
+    """Validate distnace array dimensions
+    inputs
+    -------
+    X : (np.array) of shape [m,m] where m is the number of points to calculate
+    pair-wise distances between. X should be square and 2-dimensional
+    Each element i,j should be distance between points i,j.
+    X[i,j] = np.linalg.norm(points[i] - points[j])
+    Lower indicies should be Zero! If lower indicies are non-zero then
+    pair-wise distances will be double counted"""
+
+    """The distance array should be square and rank 2"""
+    msg='Distance Array should  be 2-dimensional, got {} dimensions'
+    assert(np.ndim(X) == 2), msg.format(np.ndim(X))
+    msg='Distance Array should be square, got {} shape'
+    assert(X.shape[0] == X.shape[1]), msg.format(X.shape)
+
+    """The array should be uppper triangular with zeros in the bottom
+    diagonal AND along the diagonal"""
+    lower_indicies = np.tril_indices(X.shape[0], 0)
+    if not np.all(X[lower_indicies] == 0):
+        msg=('All Lower Triangular elements of the distance array should be' +
+             'Zero. got {} Non-Zero Indicies')
+        non_zero = np.where(X[lower_indicies] != 0)
+        raise ValueError(msg.format(X[non_zero]))
+
+    return None
+
 
 def pdist_array(X):
     """The R-package functions expect an upper triangular array of """

@@ -15,14 +15,17 @@ import matplotlib.pyplot as plt
 from scipy.spatial.distance import pdist
 
 # Local imports
-from c_index import (simple_cluster_points,
-                      calc_c_index,
-                      calc_cindex_nbclust_implementation,
-                      calc_cindex_clusterSim_implementation,
-                      calc_Nw,
-                      calc_smin_smax,
-                      calc_sw,
-                      pdist_array)
+from c_index import (calc_Nw,
+                     calc_c_index,
+                     calc_cindex_clusterSim_implementation,
+                     calc_cindex_nbclust_implementation,
+                     calc_smin_smax,
+                     calc_sw,
+                     pdist,
+                     pdist_array,
+                     simple_cluster_points,
+                     validate_distance_input,
+                     )
 
 #%%
 

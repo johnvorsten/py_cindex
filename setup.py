@@ -16,7 +16,7 @@ with open('README.md', 'r') as f:
 
 short_description = """Clustering C Index"""
 
-setuptools.setup(name="py_cindex",
+setuptools.setup(name="c_index",
                  version="0.0.1",
                  author="John Vorsten",
                  author_email="vorstenjohn@gmail.com",

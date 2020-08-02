@@ -109,7 +109,7 @@ class Test(unittest.TestCase):
         cluster_labels = self.cluster_labels
         cindex = calc_c_index(X, cluster_labels)
 
-        # nbclust inplementaiton takes an array of pointwise differences
+        # nbclust implementaiton takes an array of pointwise differences
         distances_array = pdist_array(X)
 
         # Test cindex signature and return type

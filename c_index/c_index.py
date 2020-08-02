@@ -30,6 +30,10 @@ from scipy.spatial.distance import pdist
 """
 ##### Here is the Nb-Clust implementation of the CIndex #####
 See https://cran.r-project.org/web/packages/NbClust/index.html
+Note these two lines (R Code) :
+    Dmin = min(v_min)
+    Dmax = max(v_max)
+    result <- (DU - r * Dmin)/(Dmax * r - Dmin * r)
 
 Indice.cindex <- function (d, cl)
 {
@@ -69,7 +73,7 @@ See https://rdrr.io/cran/clusterSim/src/R/index.C.r
 Note these two lines :
 	Dmin=sum(sort(ddist)[1:r])
 	Dmax=sum(sort(ddist,decreasing = T)[1:r])
-THey incldue the whole distance array, which incldues all permutations of
+They include the whole distance array, which includes all permutations of
 distances between points (instead of combinations). This means the high
 end and low end are double counted? I dont think that is the correct way to
 calculate C Index

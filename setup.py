@@ -11,13 +11,13 @@ import setuptools
 
 #%%
 
-with open('README.md', 'r') as f:
+with open('README.md', 'r', encoding='utf8') as f:
     long_description = f.read()
 
 short_description = """Clustering C Index"""
 
 setuptools.setup(name="c_index",
-                 version="0.0.1",
+                 version="0.0.2",
                  author="John Vorsten",
                  author_email="vorstenjohn@gmail.com",
                  description=short_description,

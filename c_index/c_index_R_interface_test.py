@@ -14,10 +14,9 @@ from sklearn.datasets import make_blobs
 import matplotlib.pyplot as plt
 
 # Local imports
-from c_index import (calc_c_index, simple_cluster_points)
+from .c_index import (calc_c_index, simple_cluster_points)
 
-
-from c_index_R_interface import (calc_c_index_clusterCrit,
+from .c_index_R_interface import (calc_c_index_clusterCrit,
                                  calc_c_index_clusterSim)
 
 

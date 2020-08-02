@@ -97,8 +97,8 @@ class Test(unittest.TestCase):
         for m in range(0, distances_array.shape[0]): # Row axis
             for n in range(m+1, distances_array.shape[1]): # Column axis
                 dist = np.linalg.norm(X[m] - X[n])
-                assert(dist == distances_array[m,n])
-                self.assertEqual(dist, distances_array[m,n])
+                assert(np.allclose(dist, distances_array[m,n]))
+                self.assertAlmostEqual(dist, distances_array[m,n], places=3)
 
 
         return None

@@ -35,7 +35,7 @@ setuptools.setup(name="c_index",
                  ],
                  python_requires='>=3',
                  install_requires=[
-                     'rpy2',
+                     #'rpy2', # Not required unless using extension
                      'pandas',
                      'numpy',
                      'scipy',

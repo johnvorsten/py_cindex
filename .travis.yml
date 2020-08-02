@@ -35,15 +35,19 @@ install:
   - conda install scikit-learn
   - conda install scipy
   - conda install rpy2
-  - conda install r-essentials r-base
+  # - conda install r-essentials r-base # Not testing R modules
   - conda install pytest # Use this for testing
 
   # Install R packages with conda
-  - sudo wget https://cran.r-project.org/src/contrib/NbClust_3.0.tar.gz
-  - R CMD INSTALL NbClust_3.0.tar.gz
+  # - sudo wget https://cran.r-project.org/src/contrib/NbClust_3.0.tar.gz
+  # - sudo wget https://cran.r-project.org/src/contrib/clusterCrit_1.2.8.tar.gz
+  # - sudo wget https://cran.r-project.org/src/contrib/clusterSim_0.49-1.tar.gz
+  # - R CMD INSTALL NbClust_3.0.tar.gz
+  # - R CMD INSTALL clusterCrit_1.2.8.tar.gz
+  # - R CMD INSTALL clusterSim 0.49-1.tar.gz
 
 script:
     # Dont be ambiguous about where your test files are at
     - pytest ./c_index/c_index_test.py # Run tests
-    - pytest ./c_index/c_index_R_interface_test.py
+    # - pytest ./c_index/c_index_R_interface_test.py
 

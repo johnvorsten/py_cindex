@@ -11,7 +11,6 @@ import unittest
 # Third party imports
 import numpy as np
 from sklearn.datasets import make_blobs
-import matplotlib.pyplot as plt
 
 # Local imports
 from .c_index import (calc_c_index, simple_cluster_points)
@@ -75,6 +74,8 @@ if __name__ == '__main__':
 
 
 def example_1():
+    import matplotlib.pyplot as plt
+
     # Generate some data
     xs = np.array([[1,2,1.5,1.75,1.33,0.88],
                   [5,5.5,4.88,6.33,5.01,4.95]]) # Cluster 1, 2 x values
@@ -128,6 +129,8 @@ def example_1():
 #%% Example 2
 
 def example_2():
+    import matplotlib.pyplot as plt
+
     # Generate some data
     X, labels = make_blobs(n_samples=50, n_features=2, centers=5, cluster_std=1)
 

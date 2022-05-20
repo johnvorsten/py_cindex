@@ -13,10 +13,12 @@ import numpy as np
 from sklearn.datasets import make_blobs
 
 # Local imports
-from .c_index import (calc_c_index, simple_cluster_points)
+from c_index.c_index import (
+    calc_c_index, simple_cluster_points)
 
-from .c_index_R_interface import (calc_c_index_clusterCrit,
-                                 calc_c_index_clusterSim)
+from c_index.c_index_R_interface import (
+    calc_c_index_clusterCrit,
+    calc_c_index_clusterSim)
 
 
 #%%
